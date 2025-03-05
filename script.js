@@ -1,4 +1,5 @@
 
+
 document.getElementById("btn-bonjour").addEventListener("click", function() {
     let name = document.getElementById("nameInput").value; 
     if (name) {
@@ -6,6 +7,11 @@ document.getElementById("btn-bonjour").addEventListener("click", function() {
     } else {
         alert("Veuillez entrer votre nom !"); 
     }
+});
+
+
+document.getElementById("btn-aide").addEventListener("click", function() {
+    alert("Bienvenue dans l'aide !\n\n1. Entrez votre nom et cliquez sur 'Bonjour' pour voir un message.\n2. Sélectionnez un fichier .txt pour voir son nom.\n3. Cliquez sur 'Afficher l'aide' pour voir ce message.");
 });
 
 
@@ -17,3 +23,5 @@ document.getElementById("fileInput").addEventListener("change", function() {
         document.getElementById("fileName").textContent = "Aucun fichier sélectionné."; 
     }
 });
+
+
