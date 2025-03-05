@@ -2,9 +2,9 @@
 document.getElementById("btn-bonjour").addEventListener("click", function() {
     let name = document.getElementById("nameInput").value; 
     if (name) {
-        document.getElementById("message").textContent = "Bonjour, " + name + " !"; 
+        alert("Bonjour, " + name + " !"); 
     } else {
-        document.getElementById("message").textContent = "Veuillez entrer votre nom !"; 
+        alert("Veuillez entrer votre nom !"); 
     }
 });
 
