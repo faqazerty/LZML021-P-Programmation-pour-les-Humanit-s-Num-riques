@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/canvasjs.min.js"></script>
+    <title>Dongun KIM</title>
+    <style>
+        html {
+            background-color: #f0f0f0;
+            font-size: 14px;
+            max-width: 100vw;
+        }
+        #page {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 2px solid #000;
+            padding: 20px;
+        }
+        .entete {
+            text-align: center;
+        }
+        h1, h2 {
+            font-size: 1.5em;
+        }
+        #aboutme {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 8px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        details summary {
+            cursor: pointer;
+            padding: 8px;
+            background-color: #f0f0f0;
+            border: 1px solid #aaa;
+            margin-top: 10px;
+        }
+        details {
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="page">
+    <div class="entete">
+        <h1>KIM Dongun</h1>
+        <h2>UFR LLD, 22105448 campus Nation</h2>
+        <img src="assets/img/sorbonne-nouvelle-devise-trapezes.png" width="20%">
+        <img src="assets/img/gtr-r34-chromebook-wallpaper.jpg" width="20%">
+    </div>
+    <br><br>
+    <center><button id="button_aboutme" class="fade" onclick="showHide_aboutme()" >Films</button></center> <!-- crée une fonction qui affiche/cache l'aide, centrée.. -->
+     <br><br>
+    <div id="aboutme">
+        <p>Les genres de films j'aime</p>
+        <table>
+            <thead>
+            <tr><th>Genre</th><th>film</th></tr>
+            </thead>
+            <tbody>
+            <tr><td>Superhero</td><td>Deadpool & Wolverine</td></tr>
+            <tr><td>Balck Comedy</td><td>Parasite</td></tr>
+            <tr><td>Car</td><td>2 fast 2 furious</td></tr>
+            <tr><td>Anime</td><td>Initial D The movie: Third Stage</td></tr>
+            </tbody>
+        </table>
+        <p>Voici les quatre derniers films que j'ai vu :</p>
+        <ol>
+            
+            <img src="assets/img/Deadpool-Wolverine-5-scaled.jpg" width="20%">
+            <li><i>Deadpool & Wolverine</i>, Shawn Levy, Walt Disney Studios</li>
+            <img src="assets/img/MV5BYjk1Y2U4MjQtY2ZiNS00OWQyLWI3MmYtZWUwNmRjYWRiNWNhXkEyXkFqcGc@._V1_.jpg" width="20%">
+            <li><i>Parasite</i>, Bong Joon Ho, CJ Entertainment</li>
+            <img src="assets/img/af.jpg" width="20%">
+            <li><i>2 fast 2 furious</i>, John Singleton, Universial Studios</li>
+            <img src="assets/img/Initial_D_The_Movie_B_JP1.jpg" width="20%">
+            <li><i>Initial D The movie: Third Stage</i>, Shigeno SHuichi, Studio DEEN</li>
+            
+        </ol>
+    </div>
+
+    <details>
+        <summary><strong>Chargement & Paramètres</strong></summary>
+        <label for="fileInput">Sélectionner un fichier au format .txt :</label>
+        <input type="file" id="fileInput" accept=".txt">
+        <br>
+        <label for="delimID">Délimiteur(s)</label>
+        <input type="text" id="delimID" value=" ,;’'~|&#@=`%*$()[]{}_:+«»§\/">
+        <br>
+        <label for="poleID">Pôle</label>
+        <input type="text" id="poleID" placeholder="entrez un pôle...">
+        <br>
+        <label for="lgID">Longueur</label>
+        <input type="text" id="lgID" value="10">
+        <br>
+        <label for="stopwordID">Stopwords</label>
+        <input type="text" id="stopwordID" value="de,le,la,les,à,et,des,un,une,du,que,en,l,qu,d,s,se,ne,n,ce,me,sa">
+    </details>
+
+    <details>
+        <summary><strong>Analyse de texte</strong></summary>
+        <button onclick="segText()">Segmentation</button>
+        <button onclick="dictionnaire()">Dictionnaire</button>
+        <button onclick="nbPhrases()">Nombre de phrases</button>
+        <button onclick="tokenLong()">Mots les plus longs</button>
+        <button onclick="grep()">GREP</button>
+        <button onclick="concord()">Concordancier</button>
+    </details>
+
+    <details>
+        <summary><strong>Visualisation</strong></summary>
+        <button onclick="pieChart()">Pie Chart</button>
+    </details>
+
+    <details>
+        <summary><strong>Autres / Fun</strong></summary>
+        <button class="fade" onclick="verlaniser()"><span>🔄 Verlaniser</span></button>
+
+    </details>
+
+    <div id="logger1"></div>
+    <div id="logger2"></div>
+    <div id="logger3"></div>
+    <div id="fileDisplayArea"></div>
+    <div id="page-analysis"></div>
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+
+    <footer>
+        <p><a href="http://www.univ-paris3.fr/">Lien vers le site de Sorbonne Nouvelle</a></p>
+    </footer>
+</div>
+</body>
+</html>
